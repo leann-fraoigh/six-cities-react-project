@@ -2,12 +2,24 @@ import Offer from '../../types/offer';
 
 type OfferCardProps = {
   offer: Offer;
+  onHover: (id: Offer['id']) => void;
+  onLeave: () => void;
 };
 
 function OfferCard(props: OfferCardProps): JSX.Element {
   const {id, img, isPremium, pricePerNight, title, type, rating} = props.offer;
+  const onHover = props.onHover;
+  const onLeave = props.onLeave;
+
   return (
-    <article key={id} className="cities__card place-card">
+    <article key={id} className="cities__card place-card"
+      onMouseEnter={() => {
+        onHover(id);
+      }}
+      onMouseLeave={() => {
+        onLeave();
+      }}
+    >
       { isPremium ? (
         <div className="place-card__mark">
           <span>Premium</span>
