@@ -20,8 +20,8 @@ function App(props: AddProps): JSX.Element {
         <Route path={AppRoute.Main} element={<MainScreen offers={offers}/>} />
         <Route path={AppRoute.Login} element={<LoginScreen/>} />
         <Route path={AppRoute.Favorites} element={
-          <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-            <FavoritesScreen/>
+          <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+            <FavoritesScreen offers={offers}/>
           </PrivateRoute>
         }
         />
