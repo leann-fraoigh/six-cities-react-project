@@ -20,10 +20,12 @@ function FavoritesScreen(props: FavoritesScreenProps): JSX.Element {
     offersSorted[currentCity].push(offer);
   });
 
+  // Объявляем массив городов с избранными предложениями
   const offersGrouppedByPlace: JSX.Element[] = [];
 
   for (const placeWithFavorites in offersSorted) {
     if (Object.prototype.hasOwnProperty.call(offersSorted, placeWithFavorites)) {
+      // Собираем массив городов с избранными предложениями
       offersGrouppedByPlace.push(
         (
           <li className="favorites__locations-items" key={placeWithFavorites}>
@@ -35,6 +37,7 @@ function FavoritesScreen(props: FavoritesScreenProps): JSX.Element {
               </div>
             </div>
             <div className="favorites__places">
+              {/* Рендерим список предложений в городе */}
               {offersSorted[placeWithFavorites].map((currentOffer, i: number) => (
                 <OfferCard offer={currentOffer} key={currentOffer.id}/>
               ))}

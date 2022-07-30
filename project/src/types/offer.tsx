@@ -1,5 +1,5 @@
 type Offer = {
-  id: number,
+  id: string,
   city: 'Paris' | 'Cologne' | 'Brussels' | 'Amsterdam' | 'Hamburg' | 'Dusseldorf',
   img: string,
   isPremium: boolean,

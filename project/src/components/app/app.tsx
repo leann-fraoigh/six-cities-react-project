@@ -25,7 +25,7 @@ function App(props: AddProps): JSX.Element {
           </PrivateRoute>
         }
         />
-        <Route path={AppRoute.Room} element={<PropertyScreen/>} />
+        <Route path={AppRoute.Room} element={<PropertyScreen offers={offers}/>} />
         <Route path='*' element={<NotFoundScreen/>} />
       </Routes>
     </BrowserRouter>

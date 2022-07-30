@@ -6,11 +6,11 @@ type OffersCardsListProps = {
   offers: Offer[],
 }
 function OffersCardsList({offers}: OffersCardsListProps): JSX.Element {
-  const setActiveCard = useState<number | null>(null)[1];
+  const setActiveCard = useState<string | undefined>(undefined)[1];
 
   return (
     <div className="cities__places-list places__list tabs__content">
-      {offers.map((offer: Offer) => <OfferCard offer={offer} key={offer.id} onHover={(id) => {setActiveCard(id);}} onLeave={() => {setActiveCard(null);}}/>)}
+      {offers.map((offer: Offer) => <OfferCard offer={offer} key={offer.id} onHover={(id) => {setActiveCard(id);}} onLeave={() => {setActiveCard(undefined);}}/>)}
     </div>
   );
 }
