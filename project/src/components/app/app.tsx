@@ -8,11 +8,11 @@ import PrivateRoute from '../private-route/private-route';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import Offer from '../../types/offer';
 
-type AddProps = {
+type AppProps = {
   offers: Offer[]
 }
 
-function App(props: AddProps): JSX.Element {
+function App(props: AppProps): JSX.Element {
   const {offers} = props;
   return (
     <BrowserRouter>
