@@ -1,8 +1,8 @@
-import Offer from '../../types/offer';
+import { Offer, Offers } from '../../types/offer';
 import OfferCard from '../../components/offer-card/offer-card';
 
 type FavoritesScreenProps = {
-  offers: Offer[];
+  offers: Offers;
 };
 
 type OffersSorted = {[city: string]: Offer[]};

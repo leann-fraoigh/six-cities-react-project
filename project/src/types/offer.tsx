@@ -1,4 +1,4 @@
-type Offer = {
+export type Offer = {
   id: string,
   city: 'Paris' | 'Cologne' | 'Brussels' | 'Amsterdam' | 'Hamburg' | 'Dusseldorf',
   img: string,
@@ -9,4 +9,5 @@ type Offer = {
   rating: number,
 }
 
-export default Offer;
+export type Offers = Offer[];
+

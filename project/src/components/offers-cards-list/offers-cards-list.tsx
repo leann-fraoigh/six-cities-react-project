@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Offer from '../../types/offer';
+import { Offer, Offers } from '../../types/offer';
 import OfferCard from '../offer-card/offer-card';
 
 type OffersCardsListProps = {
-  offers: Offer[],
+  offers: Offers,
 }
 function OffersCardsList({offers}: OffersCardsListProps): JSX.Element {
   const setActiveCard = useState<string | undefined>(undefined)[1];

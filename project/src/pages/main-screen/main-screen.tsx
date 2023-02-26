@@ -1,8 +1,8 @@
 import OffersCardsList from '../../components/offers-cards-list/offers-cards-list';
-import Offer from '../../types/offer';
+import { Offers } from '../../types/offer';
 
 type MainScreenProps = {
-  offers: Offer[];
+  offers: Offers;
 };
 
 function MainScreen({offers}: MainScreenProps): JSX.Element {

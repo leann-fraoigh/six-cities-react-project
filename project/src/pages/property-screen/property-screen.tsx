@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ReviewForm from '../../components/review-form/review-form';
-import Offer from '../../types/offer';
+import { Offer } from '../../types/offer';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 
 type PropertyScreenProps = {

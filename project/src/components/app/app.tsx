@@ -6,10 +6,10 @@ import PropertyScreen from '../../pages/property-screen/property-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import { AppRoute, AuthorizationStatus } from '../../const';
-import Offer from '../../types/offer';
+import { Offers } from '../../types/offer';
 
 type AppProps = {
-  offers: Offer[]
+  offers: Offers
 }
 
 function App(props: AppProps): JSX.Element {
