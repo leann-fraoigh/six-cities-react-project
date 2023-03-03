@@ -10,3 +10,10 @@ export enum AuthorizationStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+// export enum OfferType {
+//   APARTMENT = 'apartment',
+//   ROOM = 'room',
+//   HOUSE = 'house',
+//   HOTEL = 'hotel'
+// }
