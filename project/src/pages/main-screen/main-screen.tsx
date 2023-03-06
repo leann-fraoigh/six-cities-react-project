@@ -1,5 +1,7 @@
 import OffersCardsList from '../../components/offers-cards-list/offers-cards-list';
 import { Offers } from '../../types/offer';
+import Map from '../../components/map/map';
+import { city } from '../../mocks/city';
 
 type MainScreenProps = {
   offers: Offers;
@@ -101,7 +103,9 @@ function MainScreen({offers}: MainScreenProps): JSX.Element {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map city={city} offers={offers} selectedOffer={offers[0]}/>
+              </section>
             </div>
           </div>
         </div>
