@@ -34,8 +34,8 @@ function Map(props: MapProps): JSX.Element {
     if (map) {
       offers.forEach((offer) => {
         const marker = new Marker({
-          lat: offer.coords.lat,
-          lng: offer.coords.lng
+          lat: offer.location.latitude,
+          lng: offer.location.longitude
         });
 
         marker

@@ -3,9 +3,9 @@ export const offers: Offers = [
   {
     id: '101',
     city: 'Amsterdam',
-    coords: {
-      lat: 52.3909553943508,
-      lng: 4.929309666406198,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
     },
     img: 'https://upload.wikimedia.org/wikipedia/en/6/6a/Mordor.png',
     isPremium: true,
@@ -17,9 +17,9 @@ export const offers: Offers = [
   {
     id: '102',
     city: 'Amsterdam',
-    coords: {
-      lat: 52.3809553943508,
-      lng: 4.939309666406198,
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
     },
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Baggins_residence_%27Bag_End%27_with_party_sign.jpg/1280px-Baggins_residence_%27Bag_End%27_with_party_sign.jpg',
     isPremium: false,
@@ -31,9 +31,9 @@ export const offers: Offers = [
   {
     id: '103',
     city: 'Cologne',
-    coords: {
-      lat: 52.3909553943508,
-      lng: 4.85309666406198,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
     },
     img: 'https://www.thetolkienforum.com/wiki-asset/?pid=586&d=1590461128&x=1100',
     isPremium: false,
@@ -45,9 +45,9 @@ export const offers: Offers = [
   {
     id: '104',
     city: 'Cologne',
-    coords: {
-      lat: 52.369553943508,
-      lng: 4.85309666406198,
+    location: {
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
     },
     img: 'https://i.pinimg.com/564x/62/90/9c/62909c26abcdc14953d26d959bf8da3f.jpg',
     isPremium: true,
