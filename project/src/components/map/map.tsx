@@ -9,7 +9,7 @@ import 'leaflet/dist/leaflet.css';
 type MapProps = {
   city: City;
   offers: Offers;
-  selectedOffer: Offer | undefined;
+  activeOfferId: Offer['id'] | undefined;
 };
 
 const defaultCustomIcon = new Icon({
@@ -25,7 +25,7 @@ const currentCustomIcon = new Icon({
 });
 
 function Map(props: MapProps): JSX.Element {
-  const {city, offers, selectedOffer} = props;
+  const {city, offers, activeOfferId} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
@@ -40,14 +40,14 @@ function Map(props: MapProps): JSX.Element {
 
         marker
           .setIcon(
-            selectedOffer !== undefined && offer.title === selectedOffer.title
+            activeOfferId !== undefined && offer.id === activeOfferId
               ? currentCustomIcon
               : defaultCustomIcon
           )
           .addTo(map);
       });
     }
-  }, [map, offers, selectedOffer]);
+  }, [map, offers, activeOfferId]);
 
   return <div style={{height: '500px'}} ref={mapRef}></div>;
 }

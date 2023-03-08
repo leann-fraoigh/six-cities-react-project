@@ -1,13 +1,17 @@
+
 import OffersCardsList from '../../components/offers-cards-list/offers-cards-list';
-import { Offers } from '../../types/offer';
+import { Offer, Offers } from '../../types/offer';
 import Map from '../../components/map/map';
 import { city } from '../../mocks/city';
+import { useState } from 'react';
 
 type MainScreenProps = {
   offers: Offers;
 };
 
 function MainScreen({offers}: MainScreenProps): JSX.Element {
+
+  const [activeOfferId, setActiveOfferId] = useState<Offer['id'] | undefined>(undefined);
 
   return (
     <div className="page page--gray page--main">
@@ -91,20 +95,20 @@ function MainScreen({offers}: MainScreenProps): JSX.Element {
                     <use xlinkHref="#icon-arrow-select"></use>
                   </svg>
                 </span>
-                <ul className="places__options places__options--custom places__options--opened">
-                  <li className="places__option places__option--active" tabIndex={0}>Popular</li>
-                  <li className="places__option" tabIndex={0}>Price: low to high</li>
-                  <li className="places__option" tabIndex={0}>Price: high to low</li>
-                  <li className="places__option" tabIndex={0}>Top rated first</li>
+                <ul className="places__offers places__offers--custom places__offers--opened">
+                  <li className="places__offer places__offer--active" tabIndex={0}>Popular</li>
+                  <li className="places__offer" tabIndex={0}>Price: low to high</li>
+                  <li className="places__offer" tabIndex={0}>Price: high to low</li>
+                  <li className="places__offer" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OffersCardsList offers={offers}/>
+                <OffersCardsList offers={offers} onInteractionCallback={(id) => {setActiveOfferId(id);}} />
               </div>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
-                <Map city={city} offers={offers} selectedOffer={offers[0]}/>
+                <Map city={city} offers={offers} activeOfferId={activeOfferId} />
               </section>
             </div>
           </div>
