@@ -7,13 +7,15 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import { Offers } from '../../types/offer';
+import { Reviews } from '../../types/review';
 
 type AppProps = {
-  offers: Offers
+  offers: Offers,
+  reviews: Reviews
 }
 
 function App(props: AppProps): JSX.Element {
-  const {offers} = props;
+  const {offers, reviews} = props;
   return (
     <BrowserRouter>
       <Routes>
@@ -25,7 +27,7 @@ function App(props: AppProps): JSX.Element {
           </PrivateRoute>
         }
         />
-        <Route path={AppRoute.Room} element={<PropertyScreen offers={offers}/>} />
+        <Route path={AppRoute.Room} element={<PropertyScreen offers={offers} reviews={reviews} />} />
         <Route path='*' element={<NotFoundScreen/>} />
       </Routes>
     </BrowserRouter>
