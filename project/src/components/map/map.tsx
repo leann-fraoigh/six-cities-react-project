@@ -9,7 +9,8 @@ import 'leaflet/dist/leaflet.css';
 type MapProps = {
   city: City;
   offers: Offers;
-  activeOfferId: Offer['id'] | undefined;
+  activeOfferId?: Offer['id'] | undefined;
+  height: number;
 };
 
 const defaultCustomIcon = new Icon({
@@ -25,7 +26,7 @@ const currentCustomIcon = new Icon({
 });
 
 function Map(props: MapProps): JSX.Element {
-  const {city, offers, activeOfferId} = props;
+  const {city, offers, activeOfferId, height} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
@@ -49,7 +50,7 @@ function Map(props: MapProps): JSX.Element {
     }
   }, [map, offers, activeOfferId]);
 
-  return <div style={{height: '500px'}} ref={mapRef}></div>;
+  return <div style={{height: `${height}px`}} ref={mapRef}></div>;
 }
 
 export default Map;

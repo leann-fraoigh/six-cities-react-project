@@ -108,7 +108,7 @@ function MainScreen({offers}: MainScreenProps): JSX.Element {
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
-                <Map city={city} offers={offers} activeOfferId={activeOfferId} />
+                <Map city={city} offers={offers} activeOfferId={activeOfferId} height={500}/>
               </section>
             </div>
           </div>
