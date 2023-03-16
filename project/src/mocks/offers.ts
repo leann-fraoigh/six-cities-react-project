@@ -7,7 +7,7 @@ export const offers: Offers = [
       latitude: 52.3909553943508,
       longitude: 4.929309666406198,
     },
-    img: 'https://upload.wikimedia.org/wikipedia/en/6/6a/Mordor.png',
+    img: 'https://upload.wikimedia.org/wikipedia/en/4/4b/Mordor_Barad-Dur_Mount_Doom.jpg',
     isPremium: true,
     pricePerNight: 500000,
     title: 'Barad-dûr',

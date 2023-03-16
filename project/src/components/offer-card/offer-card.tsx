@@ -6,16 +6,18 @@ type OfferCardProps = {
   onHover?: (id: Offer['id']) => void;
   onLeave?: () => void;
   isFavoriteCard?: boolean;
+  className?: string;
 };
 
 function OfferCard(props: OfferCardProps): JSX.Element {
   const {id, img, isPremium, pricePerNight, title, type, rating} = props.offer;
   const isFavoriteCard = props.isFavoriteCard;
+  const className = props.className;
   const onHover = props.onHover;
   const onLeave = props.onLeave;
 
   return (
-    <article key={id} className={`cities__card place-card ${isFavoriteCard ? 'favorites__card' : ''}`}
+    <article key={id} className={`place-card ${isFavoriteCard ? 'favorites__card' : ''} ${className ? className : ''}`}
       onMouseEnter={() => {
         if (onHover) {
           onHover(id);
@@ -31,7 +33,7 @@ function OfferCard(props: OfferCardProps): JSX.Element {
         <div className="place-card__mark">
           <span>Premium</span>
         </div>}
-      <div className={`cities__image-wrapper place-card__image-wrapper ${isFavoriteCard ? 'favorites__image-wrapper' : ''}`}>
+      <div className={`place-card__image-wrapper ${isFavoriteCard ? 'favorites__image-wrapper' : ''}`}>
         <Link to={`/offer/${id}`}>
           <img className="place-card__image" src={img} width="260" height="200" alt="Place" />
         </Link>
